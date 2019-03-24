@@ -35,4 +35,27 @@ hashMapEnumFromString|1309
 mapFindElement|206
 streamFindElement|1481
 
+| Test Name | Data size | Time Microseconds |
+
+testLambdaWithSetFilter | 8 | 8736
+testLambdaFilter | 8 | 620 
+testClassicWithContainsFilter | 8 | 79 
+testClassicFilter | 8 | 75 
+testLambdaFilterBigList | 10000 | 2686 
+testClassicFilterBigList | 10000 | 11814 
+testLambdaWithSetFilterBigList | 10000 | 2487
+testClassicWithContainsFilterBigList | 10000 | 2960 
+testLambdaFilterBigList | 30000 | 7861 
+testClassicFilterBigList | 30000 | 13405 
+testLambdaWithSetFilterBigList | 30000 | 6632
+testClassicWithContainsFilterBigList |30000 | 6744
+testLambdaFilterBigList | 50000 | 24129
+testClassicFilterBigList | 50000 | 28599
+testLambdaWithSetFilterBigList | 50000 | 33727
+testClassicWithContainsFilterBigList | 50000 |16198
+testLambdaFilterBigList | 80000 | 20662
+testClassicFilterBigList | 80000 | 42445
+testLambdaWithSetFilterBigList | 80000 | 23450
+testClassicWithContainsFilterBigList | 80000 | 37296
+
 Thanks!!
