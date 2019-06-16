@@ -7,6 +7,9 @@ import java.util.stream.Collectors;
 
 public final class FilteringFunctions {
 
+	private FilteringFunctions() {
+	}
+
 	public static List<Employee> classicFilter(List<Employee> employeeList, List<String> employeeNamesFilter) {
 		List<Employee> filteredList = new ArrayList<>();	 
 	    for (Employee employee : employeeList) {
@@ -31,24 +34,16 @@ public final class FilteringFunctions {
 	}
 	
 	public static List<Employee> lambdaFilter(List<Employee> employeeList, List<String> employeeNamesFilter) {
-		List<Employee> filteredList = new ArrayList<>();
-		
-		filteredList = employeeList.stream()
+		return employeeList.stream()
 			      .filter(employee -> employeeNamesFilter.contains(employee.getName()))
 			      .collect(Collectors.toList());
-			 
-	    
-	    return filteredList;
 	}
 	
 	public static List<Employee> lambdaWithSetFilter(List<Employee> employeeList, List<String> employeeNamesFilter) {
-		List<Employee> filteredList = new ArrayList<>();	 
-		 Set<String> nameFilterSet = employeeNamesFilter.stream().collect(Collectors.toSet());
-		 
-		    filteredList = employeeList.stream()
+		Set<String> nameFilterSet = employeeNamesFilter.stream().collect(Collectors.toSet());
+
+		return employeeList.stream()
 		      .filter(employee -> nameFilterSet.contains(employee.getName()))
 		      .collect(Collectors.toList());
-	    
-	    return filteredList;
 	}
 }
