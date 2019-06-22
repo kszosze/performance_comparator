@@ -64,20 +64,20 @@ Time unit as ser to MicroSeconds in order to have enough volume to compare.
 
 | # Run complete. Total time: 00:08:58
 
-| Benchmark                                                                                | Mode  | Cnt    |  Score      | Error   |Units
-| testClassicFilter                     avgt   20     0.161 ±    0.003  us/op
-| testClassicFilterBigList              avgt   20  1775.122 ±  202.033  us/op
-| testClassicWithContainsFilter         avgt   20     0.105 ±    0.010  us/op
-| testClassicWithContainsFilterBigList  avgt   20  1367.378 ±  769.988  us/op
-| testLambdaFilter                      avgt   20     0.344 ±    0.096  us/op
-| testLambdaFilterBigList               avgt   20  4844.968 ± 1242.457  us/op
-| testLambdaWithSetFilter               avgt   20     0.365 ±    0.090  us/op
-| testLambdaWithSetFilterBigList        avgt   20  2729.679 ± 1056.436  us/op
-| hashMapEnumFromString                                         avgt   20     0.040 ±    0.009  us/op
-| streamEnumFromString                                          avgt   20     0.240 ±    0.105  us/op
-| switchEnumFromString                                          avgt   20     0.001 ±    0.001  us/op
-| mapFindElement                                   avgt   20     0.005 ±    0.001  us/op
-| streamFindElement                                avgt   20     0.640 ±    0.111  us/op
+| Benchmark                                                                                | Mode  | Cnt    |  Score      | Error   |Units|
+| testClassicFilter                     |avgt   |20     |0.161 |±    0.003  |us/op
+| testClassicFilterBigList (80k elements)  |avgt   |20  |1775.122 |±  202.033  |us/op
+| testClassicWithContainsFilter         |avgt   |20     |0.105 |±    0.010  |us/op
+| testClassicWithContainsFilterBigList (80k elements) |avgt   |20  |1367.378 |±  769.988  |us/op
+| testLambdaFilter                      |avgt   |20     |0.344 |±    0.096  |us/op
+| testLambdaFilterBigList    (80k elements)           |avgt   |20  |4844.968 |± 1242.457  |us/op
+| testLambdaWithSetFilter               |avgt   |20     |0.365 |±    0.090  |us/op
+| testLambdaWithSetFilterBigList   (80k elements)     |avgt   |20  |2729.679 |± 1056.436  |us/op
+| hashMapEnumFromString                                        | avgt   |20     |0.040 |±    0.009  |us/op
+| streamEnumFromString                                          |avgt   |20     |0.240 |±    0.105  |us/op
+| switchEnumFromString                                         | avgt   |20     |0.001 |±    0.001 | us/op
+| mapFindElement                                  | avgt   |20     |0.005 |±    0.001  |us/op
+| streamFindElement                               | avgt   |20     |0.640 |±    0.111  |us/op
 
 
 Thanks!!
