@@ -18,10 +18,12 @@ Rules are easy:
 
 ## Install and execution
 
-Just execute maven dude!!
+Build instructions
 
 `mvn clean install`
 
+execute instructions
+`java -jar target/performance-testing-1.0-SNAPSHOT-jar-with-dependencies.jar`
 ## Results
 
 This section, just add the execution times and if possible specs where you executed

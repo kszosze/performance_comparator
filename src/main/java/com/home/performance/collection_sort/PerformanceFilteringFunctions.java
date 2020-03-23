@@ -1,22 +1,28 @@
 package com.home.performance.collection_sort;
 
+import static com.home.performance.collection_sort.Fixtures.buildEmployeeList;
+import static com.home.performance.collection_sort.Fixtures.buildGiantEmployeeList;
+import static com.home.performance.collection_sort.Fixtures.employeeNameFilter;
+
+import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
-
-import java.util.List;
-
-import static com.home.performance.collection_sort.Fixtures.*;
 
 @Slf4j
 @State(Scope.Benchmark)
 public class PerformanceFilteringFunctions {
 
 	static final List<String> employeeNameFilter = employeeNameFilter();
+
 	static final List<Employee> employeeList = buildEmployeeList();
+
+	static final List<Employee> smallEmployeeList = buildGiantEmployeeList(1000);
+
+	static final List<Employee> mediumEmployeeList = buildGiantEmployeeList(25000);
+
 	static final List<Employee> bigEmployeeList = buildGiantEmployeeList(80000);
-	static final int EXPECTED = employeeNameFilter().size();
 
 	@Benchmark
 	public void testClassicFilter() {
@@ -41,6 +47,46 @@ public class PerformanceFilteringFunctions {
 	@Benchmark
 	public void testClassicFilterBigList() {
 		FilteringFunctions.classicFilter(bigEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testClassicWithContainsFilterSmallList() {
+		FilteringFunctions.classicWithContainsFilter(smallEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testLambdaFilterSmallList() {
+		FilteringFunctions.lambdaFilter(smallEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testLambdaWithSetFilterSmallList() {
+		FilteringFunctions.lambdaWithSetFilter(smallEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testClassicFilterSmallList() {
+		FilteringFunctions.classicFilter(smallEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testClassicWithContainsFilterMediumList() {
+		FilteringFunctions.classicWithContainsFilter(mediumEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testLambdaFilterMediumList() {
+		FilteringFunctions.lambdaFilter(mediumEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testLambdaWithSetFilterMediumList() {
+		FilteringFunctions.lambdaWithSetFilter(mediumEmployeeList, employeeNameFilter);
+	}
+
+	@Benchmark
+	public void testClassicFilterMediumList() {
+		FilteringFunctions.classicFilter(mediumEmployeeList, employeeNameFilter);
 	}
 
 	@Benchmark
