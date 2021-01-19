@@ -19,7 +19,7 @@ public class PerfComparatorApp {
                 .include(PerformanceEnum.class.getSimpleName())
                 .include(PerformanceRepository.class.getSimpleName())
                 .timeUnit(TimeUnit.MICROSECONDS)
-                .mode(Mode.AverageTime)
+                .mode(Mode.Throughput)
                 .forks(1)
                 .build();
 

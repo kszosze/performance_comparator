@@ -5,14 +5,14 @@ public enum SwitchEnum {
 
     ENUM1("enum1"), ENUM2("enum2"), ENUM3("enum3"), DEFAULT("default");
 
-    private String value;
+    private final String value;
 
     SwitchEnum(String value) {
         this.value = value;
     }
 
     public static SwitchEnum fromString(final String value) {
-        SwitchEnum result = DEFAULT;
+        SwitchEnum result;
         switch (value) {
             case "enum1":
                 result = ENUM1;
@@ -23,6 +23,9 @@ public enum SwitchEnum {
             case "enum3":
                 result = ENUM3;
                 break;
+            default:
+                result = DEFAULT;
+            break;    
         }
         return result;
 

@@ -6,7 +6,7 @@ import java.util.Map;
 public class HashMapRepository {
 
 
-    private static Map<String, ElementType> data = new HashMap<>();
+    private static final Map<String, ElementType> data = new HashMap<>();
 
     static {
         data.put("Type1", new ElementType("Type1"));

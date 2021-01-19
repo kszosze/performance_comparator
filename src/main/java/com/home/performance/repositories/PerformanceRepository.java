@@ -9,8 +9,8 @@ import org.openjdk.jmh.annotations.State;
 public class PerformanceRepository {
 
 
-    private StreamRepository streamRepository = new StreamRepository();
-    private HashMapRepository mapRepository = new HashMapRepository();
+    private final StreamRepository streamRepository = new StreamRepository();
+    private final HashMapRepository mapRepository = new HashMapRepository();
 
     @Benchmark
     public void streamFindElement() throws Exception {

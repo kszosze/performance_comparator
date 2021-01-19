@@ -5,9 +5,9 @@ import lombok.Getter;
 @Getter
 public class ElementType {
 
-    private String code;
+    private final String code;
 
-    private ElementType[] elementTypes;
+    private final ElementType[] elementTypes;
 
     ElementType(String nCode) {
         this.code = nCode;
